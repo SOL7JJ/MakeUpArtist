@@ -249,57 +249,74 @@
           <p class="muted reveal">Pick a date and time — I’ll confirm availability with you.</p>
         </div>
 
-        <form class="booking reveal" id="bookingForm">
-          <div class="booking__grid">
-            <label class="field">
-              <span class="field__label">Full name</span>
-              <input name="name" required placeholder="Your name" />
-            </label>
+       
 
-            <label class="field">
-              <span class="field__label">Email</span>
-              <input name="email" type="email" required placeholder="you@email.com" />
-            </label>
 
-            <label class="field">
-              <span class="field__label">Service</span>
-              <select name="service" required>
-                <option value="" selected disabled>Choose one</option>
-                <option>Bridal</option>
-                <option>Editorial</option>
-                <option>Event / Evening Glam</option>
-                <option>Lesson</option>
-              </select>
-            </label>
 
-            <label class="field">
-              <span class="field__label">Location</span>
-              <input name="location" placeholder="City / venue" />
-            </label>
 
-            <label class="field">
-              <span class="field__label">Preferred date</span>
-              <input name="date" type="date" required />
-            </label>
+<form class="booking reveal" id="bookingForm"
+      action="https://formspree.io/f/mldjgppg"
+      method="POST">
 
-            <label class="field">
-              <span class="field__label">Preferred time</span>
-              <input name="time" type="time" required />
-            </label>
-          </div>
+  <input type="hidden" name="_subject" value="New Booking Request — Tin Ash Trendz">
+  <input type="hidden" name="_captcha" value="false">
 
-          <label class="field">
-            <span class="field__label">Notes</span>
-            <textarea name="notes" rows="4" placeholder="Tell me the vibe, skin type, reference look, etc."></textarea>
-          </label>
+  <div class="booking__grid">
+    <label class="field">
+      <span class="field__label">Full name</span>
+      <input name="name" required placeholder="Your name" autocomplete="name" />
+    </label>
 
-          <div class="booking__actions">
-            <button class="btn btn--solid" type="submit">Request Booking</button>
-            <a class="btn btn--ghost" href="https://wa.me/YOUR_NUMBER" target="_blank" rel="noopener">Message on WhatsApp</a>
-          </div>
+    <label class="field">
+      <span class="field__label">Email</span>
+      <input name="email" type="email" required placeholder="you@email.com" autocomplete="email" />
+    </label>
 
-          <p class="muted tiny" id="bookingMsg" aria-live="polite"></p>
-        </form>
+    <label class="field">
+      <span class="field__label">Service</span>
+      <select name="service" required>
+        <option value="" selected disabled>Choose a service</option>
+        <option>Bridal</option>
+        <option>Editorial</option>
+        <option>Event / Evening Glam</option>
+        <option>Lesson</option>
+      </select>
+    </label>
+
+    <label class="field">
+      <span class="field__label">Location</span>
+      <input name="location" placeholder="City / venue" autocomplete="address-level2" />
+    </label>
+
+    <label class="field">
+      <span class="field__label">Preferred date</span>
+      <input name="date" type="date" required />
+    </label>
+
+    <label class="field">
+      <span class="field__label">Preferred time</span>
+      <input name="time" type="time" required />
+    </label>
+  </div>
+
+  <label class="field">
+    <span class="field__label">Notes</span>
+    <textarea name="notes" rows="4" placeholder="Tell me the vibe, skin type, reference look, etc."></textarea>
+  </label>
+
+  <div class="booking__actions">
+    <button class="btn btn--solid" type="submit">Request Booking</button>
+
+    <!-- Replace YOUR_NUMBER with your real WhatsApp number, e.g. 447... -->
+    <a class="btn btn--ghost" href="https://wa.me/YOUR_NUMBER" target="_blank" rel="noopener">
+      Message on WhatsApp
+    </a>
+  </div>
+
+  <p class="muted tiny" id="bookingMsg" aria-live="polite"></p>
+</form>
+
+
       </div>
     </section>
 
