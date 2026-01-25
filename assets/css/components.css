@@ -1,0 +1,225 @@
+.nav{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav__inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 0;
+  gap:16px;
+}
+
+.logo{ font-weight:800; letter-spacing:0.3px; }
+
+.nav__links{
+  display:flex;
+  gap:18px;
+  align-items:center;
+}
+
+.nav__links a{ color:var(--muted); }
+.nav__links a:hover{ color:var(--text); }
+
+.nav__actions{ display:flex; gap:10px; }
+
+.btn{
+  border:1px solid var(--border);
+  border-radius:999px;
+  padding:10px 14px;
+  background:transparent;
+  color:var(--text);
+  cursor:pointer;
+}
+
+.btn--solid{
+  background: var(--text);
+  color: var(--bg);
+  border-color: transparent;
+}
+
+.btn--ghost:hover{ background:var(--surface); }
+
+/* HERO */
+.hero{ padding:78px 0 40px; }
+
+.hero__grid{
+  display:grid;
+  gap:28px;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items:center;
+}
+
+.pill{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:var(--surface);
+  margin-bottom:14px;
+  color: var(--muted);
+}
+
+.hero__cta{
+  display:flex;
+  gap:12px;
+  margin-top:18px;
+  flex-wrap:wrap;
+}
+
+.hero__media{ position:relative; }
+
+.hero__img{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+  border-radius: var(--radius);
+  border:1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.hero__overlay{
+  position:absolute;
+  inset:0;
+  border-radius: var(--radius);
+  pointer-events:none;
+  background: radial-gradient(65% 65% at 30% 30%, rgba(255,255,255,0.12), transparent 60%);
+}
+
+.hero__stats{ display:flex; gap:14px; margin-top:18px; flex-wrap:wrap; }
+
+.stat{
+  padding:12px 14px;
+  border-radius: 14px;
+  border:1px solid var(--border);
+  background: var(--surface);
+}
+
+.stat__num{ font-weight:800; font-size:1.1rem; }
+.stat__label{ color: var(--muted); font-size:0.9rem; }
+
+/* SECTIONS */
+.section{ padding:64px 0; }
+.section__head{ display:grid; gap:10px; margin-bottom:18px; }
+
+/* CARDS */
+.cards{ display:grid; gap:16px; grid-template-columns: repeat(3, 1fr); }
+
+.card{
+  padding:18px;
+  border-radius: var(--radius);
+  border:1px solid var(--border);
+  background: var(--surface);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.card:hover{
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+/* FORMS */
+.form{
+  display:grid;
+  gap:12px;
+  max-width:560px;
+}
+
+input, textarea, select{
+  border-radius: 14px;
+  border:1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  padding:12px 14px;
+  outline:none;
+}
+
+select{ cursor:pointer; }
+
+/* TESTIMONIALS */
+.slider{
+  border:1px solid var(--border);
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding:18px;
+}
+
+.slide{ display:none; color: var(--muted); font-size: 1.05rem; }
+.slide.is-active{ display:block; }
+
+.testimonial-author{
+  display:block;
+  margin-top:8px;
+  font-size:0.95rem;
+  font-weight:600;
+  color: var(--accent);
+}
+
+/* Floating CTA */
+.float-cta{
+  position:fixed;
+  right:16px;
+  bottom:16px;
+  display:flex;
+  gap:10px;
+  z-index:80;
+}
+
+.float-cta__btn{
+  border:1px solid var(--border);
+  background: var(--text);
+  color: var(--bg);
+  padding:10px 12px;
+  border-radius:999px;
+  font-weight:700;
+  box-shadow: var(--shadow);
+}
+
+.float-cta__btn--ghost{
+  background: var(--surface);
+  color: var(--text);
+}
+
+/* ✅ ONE Mobile block only */
+@media (max-width: 900px){
+  .hero__grid{ grid-template-columns: 1fr; }
+  .cards{ grid-template-columns: 1fr; }
+
+  /* Hide links by default */
+  .nav__links{ display:none; }
+
+  /* Show links when nav has nav--open */
+  .nav.nav--open .nav__links{
+    display:flex;
+    position:absolute;
+    top:64px;
+    right:4vw;
+
+    flex-direction:column;
+    gap:12px;
+
+    padding:14px;
+    width:min(280px, 92vw);
+
+    background: color-mix(in srgb, var(--bg) 92%, transparent);
+    border:1px solid var(--border);
+    border-radius: var(--radius);
+    backdrop-filter: blur(10px);
+    z-index: 60;
+  }
+
+  .nav.nav--open .nav__links a{
+    padding:10px 12px;
+    border-radius: 12px;
+  }
+
+  .nav.nav--open .nav__links a:hover{
+    background: var(--surface);
+    color: var(--text);
+  }
+}
