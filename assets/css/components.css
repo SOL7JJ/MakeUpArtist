@@ -223,3 +223,33 @@ select{ cursor:pointer; }
     color: var(--text);
   }
 }
+
+.tile--img {
+  position: relative;
+  overflow: hidden;
+}
+
+.tile__media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* this is the key */
+  display: block;
+}
+
+.tile__media {
+  pointer-events: none;
+}
+
+.ba {
+  position: relative;
+  overflow: hidden;
+}
+
+.ba__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;      /* 👈 THIS IS THE KEY */
+  object-position: center;
+  background-color: #000;   /* optional: avoids empty gaps looking weird */
+}
+
