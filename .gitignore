@@ -1,0 +1,8 @@
+# Ignore big source videos (phone exports)
+*.mov
+*.MOV
+*.mp4
+*.MP4
+
+# But ALLOW the optimized web videos in this folder
+!assets/videos/*.mp4
