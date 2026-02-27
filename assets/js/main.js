@@ -99,7 +99,7 @@ document.querySelectorAll('[data-ba]').forEach(ba => {
 // =========================
 // Booking form (Formspree)
 // Endpoint comes from the form's action attribute in HTML:
-// action="https://formspree.io/f/mldjgppg"
+// action=https://formspree.io/f/meeldrvq
 // =========================
 const bookingForm = document.getElementById('bookingForm');
 const bookingMsg = document.getElementById('bookingMsg');
